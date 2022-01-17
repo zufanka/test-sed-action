@@ -1,11 +1,14 @@
 name: clean-newlines
 on: push
 jobs:
-  clean-carriage-returns:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          cat $GITHUB_WORKSPACE/random/*.txt
-          for i in $GITHUB_WORKSPACE/random/*.txt; do sed $'s/cupcake/BLOOD/' $i > $i;done
-          cat $GITHUB_WORKSPACE/random/*.txt
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "cupcake"
+          replace: "BLOOD"
+          include: "random/**.txt"
+          regex: false
