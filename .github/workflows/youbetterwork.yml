@@ -7,5 +7,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           cat $GITHUB_WORKSPACE/random/*.txt
-          sed $'s/cupcake/BLOOD/' -i $GITHUB_WORKSPACE/random/*.txt
+          for i in $GITHUB_WORKSPACE/random/*.txt; do sed $'s/cupcake/BLOOD/' $i > $i;done
           cat $GITHUB_WORKSPACE/random/*.txt
