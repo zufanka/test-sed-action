@@ -10,5 +10,5 @@ jobs:
         with:
           find: "cupcake"
           replace: "BLOOD"
-          include: "random/**.txt"
+          include: "random/**"
           regex: false
