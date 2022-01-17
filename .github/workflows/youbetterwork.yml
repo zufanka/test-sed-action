@@ -6,4 +6,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          sed $'s/cupcake/BLOOD/' -i ${GITHUB_WORKSPACE}/random/*.txt
+          echo $GITHUB_WORKSPACE
+          sed $'s/cupcake/BLOOD/' -i $GITHUB_WORKSPACE/random/*.txt
