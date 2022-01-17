@@ -1,0 +1,9 @@
+name: clean-newlines
+on: push
+jobs:
+  clean-carriage-returns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          sed $'s/cupcake/blood_pudding/' -i $GITHUB_REPOSITORY/random/*.csv
